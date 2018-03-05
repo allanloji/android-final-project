@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "93741189914",
+    "firebase_url": "https://languagecast-544ac.firebaseio.com",
+    "project_id": "languagecast-544ac",
+    "storage_bucket": "languagecast-544ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93741189914:android:9ad76d9e03646ede",
+        "android_client_info": {
+          "package_name": "com.allanloji.language_cast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93741189914-vdd7pga8b9sghpts640qhh8t5sv5ab79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgEX2kZYoDterSHGCwLL9pl1XR1iebo-A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
