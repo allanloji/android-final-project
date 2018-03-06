@@ -48,7 +48,8 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".Create_Profile_Activity"></activity>
+        <activity android:name=".Create_Profile_Activity" />
+        <activity android:name=".LanguageSelectionActivity"></activity>
     </application>
 
 </manifest>
