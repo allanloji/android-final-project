@@ -106,7 +106,7 @@ public class LoginActivity extends Activity {
     private void updateUI(FirebaseUser user) {
 
         if (user != null) {
-            Intent it = new Intent( LoginActivity.this, MainActivity.class);
+            Intent it = new Intent( LoginActivity.this, LanguageSelectionActivity.class);
             startActivity(it);
         } else {
 

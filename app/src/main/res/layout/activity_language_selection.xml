@@ -44,27 +44,26 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/espanol" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/espanol" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView5"
-                    android:layout_alignStart="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginStart="6dp"
+                    android:layout_alignLeft="@+id/button19"
+                    android:layout_alignStart="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginTop="9dp"
                     android:text="Español"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -85,27 +84,28 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/ingles" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/ingles" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView5"
-                    android:layout_alignStart="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginStart="14dp"
+                    android:layout_alignEnd="@+id/button19"
+                    android:layout_alignRight="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="8dp"
                     android:text="Ingles"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -133,27 +133,26 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/italiano" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/italiano" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView5"
-                    android:layout_alignStart="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginStart="6dp"
+                    android:layout_alignLeft="@+id/button19"
+                    android:layout_alignStart="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginTop="9dp"
                     android:text="Italiano"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -174,27 +173,28 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/frances" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/frances" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/imageView5"
-                    android:layout_alignRight="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginRight="6dp"
+                    android:layout_alignEnd="@+id/button19"
+                    android:layout_alignRight="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="8dp"
                     android:text="Frances"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -221,27 +221,26 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/japones" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/japones" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView5"
-                    android:layout_alignStart="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginStart="6dp"
+                    android:layout_alignLeft="@+id/button19"
+                    android:layout_alignStart="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginTop="9dp"
                     android:text="Japones"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -262,27 +261,28 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/chino" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/chino" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView5"
-                    android:layout_alignStart="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginStart="14dp"
+                    android:layout_alignEnd="@+id/button19"
+                    android:layout_alignRight="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="8dp"
                     android:text="Chino"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -308,28 +308,27 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/coreano" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/coreano" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView5"
-                    android:layout_alignStart="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginStart="6dp"
-                    android:text="Coreano"
+                    android:layout_alignLeft="@+id/button19"
+                    android:layout_alignStart="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginTop="9dp"
+                    android:text="Koreano"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -349,27 +348,28 @@
                     tools:layout_editor_absoluteX="53dp"
                     tools:layout_editor_absoluteY="107dp" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
+                <Button
+                    android:id="@+id/button19"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_alignLeft="@+id/espButton"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/espButton"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="28dp"
-                    app:srcCompat="@drawable/aleman" />
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/aleman" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView5"
-                    android:layout_alignStart="@+id/imageView5"
-                    android:layout_below="@+id/imageView5"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginStart="14dp"
+                    android:layout_alignEnd="@+id/button19"
+                    android:layout_alignRight="@+id/button19"
+                    android:layout_below="@+id/button19"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="8dp"
                     android:text="Aleman"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -379,17 +379,22 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/acceptBttn"
         android:layout_width="359dp"
         android:layout_height="44dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:background="@drawable/sign_in_botton"
-        android:text="Accept"
+        android:onClick="AcceptLanguage"
+        android:text="Aceptar"
         android:textColor="@color/cardview_light_background"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="627dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

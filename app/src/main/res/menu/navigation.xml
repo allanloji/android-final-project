@@ -3,22 +3,22 @@
 
     <item
         android:id="@+id/navigation_news"
-        android:icon="@drawable/noticias"
+        android:icon="@drawable/news_icon"
         android:title="Noticias" />
 
     <item
         android:id="@+id/navigation_events"
-        android:icon="@drawable/eventos"
+        android:icon="@drawable/events_icon"
         android:title="Eventos" />
 
     <item
         android:id="@+id/navigation_history"
-        android:icon="@drawable/historial"
+        android:icon="@drawable/history_icon"
         android:title="Historial" />
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/perfil"
+        android:icon="@drawable/profile_icon"
         android:title="Perfil" />
 
 </menu>
