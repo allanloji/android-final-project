@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
+
+    android:background="@drawable/com_facebook_auth_dialog_background"
     tools:context="com.allanloji.language_cast.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="483dp"
-        android:layout_height="732dp"
+        android:layout_width="258dp"
+        android:layout_height="226dp"
+        android:background="@drawable/com_facebook_auth_dialog_background"
         android:scaleType="fitCenter"
-        android:src="@drawable/splashscreen"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.44" />
 </android.support.constraint.ConstraintLayout>
