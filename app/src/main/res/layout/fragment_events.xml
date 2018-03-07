@@ -14,24 +14,24 @@
         <android.support.v7.widget.CardView
             android:id="@+id/Card"
             android:layout_width="180dp"
-            android:layout_height="260"
+            android:layout_height="260dp"
             android:layout_marginBottom="68dp"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-            app:layout_constraintVertical_bias="0.181">
+            app:layout_constraintVertical_bias="0.848">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:src="@drawable/matthew_kane_394407" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="300dp"
-                    android:layout_height="180dp"
-                    android:src="@drawable/matthew_kane_394407" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -43,7 +43,7 @@
                     android:layout_marginBottom="35dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
-                    android:text="Top of the rock"
+                    android:text="Manhattan Brew"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="20sp" />
 
@@ -63,7 +63,7 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/featuring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Featuring"
@@ -113,14 +113,14 @@
         <android.support.v7.widget.CardView
             android:id="@+id/Card"
             android:layout_width="180dp"
-            android:layout_height="260"
+            android:layout_height="260dp"
             android:layout_marginBottom="68dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-            app:layout_constraintVertical_bias="0.17">
+            app:layout_constraintVertical_bias="0.848">
 
             <ImageView
                 android:id="@+id/imageView5"
