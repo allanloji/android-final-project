@@ -7,122 +7,214 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="190dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:src="@color/light_blue" />
+            android:src="@color/light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="37dp"
-            android:text="Name"
-            android:textColor="@color/cardview_light_background"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:text="Sarah Parmenter"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView5"
-            android:layout_alignStart="@+id/textView5"
-            android:layout_below="@+id/textView5"
-            android:layout_marginTop="18dp"
-            android:text="Location"
-            android:textColor="@color/cardview_light_background" />
+            android:layout_alignLeft="@+id/name"
+            android:layout_alignStart="@+id/name"
+            android:layout_below="@+id/name"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="LONDRES, INGLATERRA"
+            android:textColor="@color/cardview_light_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/profilePic"
+            android:layout_width="87dp"
+            android:layout_height="84dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/photoautor_400x400" />
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/photoautor_400x400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/personalDetailsLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageView8"
-            android:layout_marginLeft="13dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="8dp"
-            android:text="Personal Details"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="20sp" />
+            android:layout_below="@+id/header"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:text="Detalles Personales"
+            android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/nameLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView12"
-            android:layout_alignStart="@+id/textView12"
-            android:layout_below="@+id/textView12"
-            android:layout_marginTop="22dp"
-            android:text="Name" />
+            android:layout_alignLeft="@+id/personalDetailsLbl"
+            android:layout_alignStart="@+id/personalDetailsLbl"
+            android:layout_below="@+id/personalDetailsLbl"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:text="Nombre"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personalDetailsLbl" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/locationLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView13"
-            android:layout_alignStart="@+id/textView13"
-            android:layout_below="@+id/textView13"
-            android:layout_marginTop="20dp"
-            android:text="Location" />
+            android:layout_alignLeft="@+id/nameLbl"
+            android:layout_alignStart="@+id/nameLbl"
+            android:layout_below="@+id/nameLbl"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:text="Ubicacion"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameLbl" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/cardBioLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView14"
-            android:layout_alignStart="@+id/textView14"
-            android:layout_below="@+id/textView14"
-            android:layout_marginTop="34dp"
-            android:text="Biography" />
+            android:layout_alignLeft="@+id/locationLbl"
+            android:layout_alignStart="@+id/locationLbl"
+            android:layout_below="@+id/locationLbl"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:text="Biografia"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationLbl" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/languagesLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView15"
-            android:layout_alignStart="@+id/textView15"
-            android:layout_below="@+id/textView15"
-            android:layout_marginTop="39dp"
-            android:text="Languages"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="20sp" />
+            android:layout_alignLeft="@+id/cardBioLbl"
+            android:layout_alignStart="@+id/cardBioLbl"
+            android:layout_below="@+id/cardBioLbl"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:text="Lenguajes"
+            android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardBioLbl" />
 
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignLeft="@+id/textView16"
-            android:layout_alignStart="@+id/textView16"
-            android:layout_below="@+id/textView16"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ingles" />
-    </RelativeLayout>
+        <GridLayout
+            android:id="@+id/mainGrid"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="8"
+            android:alignmentMode="alignMargins"
+            android:columnCount="3"
+            android:columnOrderPreserved="false"
+            android:padding="14dp"
+            android:rowCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/espanol" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ingles" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/frances" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/nameDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="30dp"
+            android:text="Sarah Parmenter"
+            android:textColor="@color/com_facebook_likeboxcountview_border_color"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/nameLbl"
+            app:layout_constraintTop_toBottomOf="@+id/personalDetailsLbl" />
+
+        <TextView
+            android:id="@+id/locationDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:text="Londres, Inglaterra"
+            android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/locationLbl"
+            app:layout_constraintTop_toBottomOf="@+id/nameDetails" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:text="Directora de empresa, disenadora y gusto por los perros"
+            android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/cardBioLbl"
+            app:layout_constraintTop_toBottomOf="@+id/locationDetails" />
+
+
+    </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>

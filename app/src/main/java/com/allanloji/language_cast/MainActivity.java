@@ -18,19 +18,35 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            FragmentManager fragmentManager;
+            FragmentTransaction fragmentTransaction;
             switch (item.getItemId()) {
                 case R.id.navigation_news:
+                    fragmentManager = getFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                   fragmentTransaction.replace(R.id.mainContent, new NewsFragment());
+                    fragmentTransaction.commit();
 
                     return true;
                 case R.id.navigation_events:
+                    fragmentManager = getFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.mainContent, new EventsFragment());
+                    fragmentTransaction.commit();
 
                     return true;
                 case R.id.navigation_history:
-
+                    fragmentManager = getFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.mainContent, new HistoryFragment());
+                    fragmentTransaction.commit();
                     return true;
 
                 case R.id.navigation_profile:
-
+                    fragmentManager = getFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.mainContent, new ProfileFragment());
+                    fragmentTransaction.commit();
                     return true;
             }
             return false;
@@ -54,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.commit();
+
+        fragmentManager = getFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.mainContent, new NewsFragment());
         fragmentTransaction.commit();
 
 

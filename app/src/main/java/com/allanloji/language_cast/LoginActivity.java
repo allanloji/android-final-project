@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -38,6 +40,7 @@ public class LoginActivity extends Activity {
 
         mCallbackManager = CallbackManager.Factory.create();
         LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+
         loginButton.setReadPermissions("email", "public_profile");
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -101,6 +104,11 @@ public class LoginActivity extends Activity {
                         // ...
                     }
                 });
+    }
+
+    public void Login(View view){
+        Intent it = new Intent( LoginActivity.this, LanguageSelectionActivity.class);
+        startActivity(it);
     }
 
     private void updateUI(FirebaseUser user) {

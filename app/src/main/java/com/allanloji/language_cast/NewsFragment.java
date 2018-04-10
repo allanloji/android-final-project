@@ -1,12 +1,17 @@
 package com.allanloji.language_cast;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -18,6 +23,11 @@ import android.view.ViewGroup;
 public class NewsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private RecyclerView recyclerView;
+    private NewsRecyclerViewAdapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+    private List<Event> listEvent = new ArrayList<Event>();
 
     public NewsFragment() {
         // Required empty public constructor
@@ -27,8 +37,22 @@ public class NewsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        /*initData();
+        recyclerView = (RecyclerView) container.findViewById(R.id.recycler);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(container.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new NewsRecyclerViewAdapter(listEvent);
+        recyclerView.setAdapter(adapter);*/
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_news, container, false);
+        
+
+    }
+
+    private void initData() {
+        listEvent.add(new Event(R.drawable.newyork, "Sesion en Nueva York"));
+        listEvent.add(new Event(R.drawable.newyork, "Sesion en Ciudad de Mexico"));
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -38,16 +62,7 @@ public class NewsFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+
 
     @Override
     public void onDetach() {

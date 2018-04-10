@@ -7,7 +7,7 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,20 +18,67 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
-            android:text="News"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:text="Noticias"
             android:textColor="@color/light_blue"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/history"
-            android:layout_marginTop="15dp" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="380dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/newyork"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/history" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="366dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="216dp"
+            android:text="Quedada en Central Perk"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButton" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="380dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/newyork"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="366dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="216dp"
+            android:text="Quedada en Central Perk"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+
+    </android.support.constraint.ConstraintLayout>
 </FrameLayout>
