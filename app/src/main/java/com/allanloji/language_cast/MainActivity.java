@@ -2,11 +2,13 @@ package com.allanloji.language_cast;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -78,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
 
+    }
+
+    public void detailsNews(View view){
+        Intent it = new Intent( MainActivity.this, EventDetailActivity.class);
+       startActivity(it);
     }
 
 }
