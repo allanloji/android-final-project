@@ -57,7 +57,7 @@ public class EventsFragment extends Fragment{
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         //((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
-        //initCollapsingToolbar();
+        initCollapsingToolbar();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
