@@ -3,15 +3,21 @@ package com.allanloji.language_cast;
 import android.app.Fragment;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.allanloji.language_cast.pojo.Event;
+import com.allanloji.language_cast.pojo.News;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
@@ -23,11 +29,10 @@ import java.util.List;
 public class NewsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private List<News> newsList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private NewsRecyclerViewAdapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private NewsAdapter mAdapter;
 
-    private List<Event> listEvent = new ArrayList<Event>();
 
     public NewsFragment() {
         // Required empty public constructor
@@ -50,9 +55,40 @@ public class NewsFragment extends Fragment {
 
     }
 
-    private void initData() {
-        listEvent.add(new Event(R.drawable.newyork, "Sesion en Nueva York"));
-        listEvent.add(new Event(R.drawable.newyork, "Sesion en Ciudad de Mexico"));
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        recyclerView = (RecyclerView) view.findViewById(R.id.newsRecycler_view);
+
+        mAdapter = new NewsAdapter(newsList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+
+        prepareNewsData();
+
+    }
+
+    private void prepareNewsData() {
+        News news = new News("Mad Max: Fury Road", "Action & Adventure", "2015", "sdasdsadasasd");
+        newsList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        newsList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        newsList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        newsList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        newsList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        newsList.add(news);
+
+        mAdapter.notifyDataSetChanged();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
