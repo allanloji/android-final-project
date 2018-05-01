@@ -4,9 +4,20 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.allanloji.language_cast.pojo.News;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
@@ -18,6 +29,9 @@ import android.view.ViewGroup;
 public class HistoryFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private List<News> historyList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private HistoryAdapter mAdapter;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -36,6 +50,42 @@ public class HistoryFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        recyclerView = (RecyclerView) view.findViewById(R.id.historyRecycler_view);
+
+        mAdapter = new HistoryAdapter(historyList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+
+        prepareHistoryData();
+
+    }
+
+    private void prepareHistoryData() {
+        News news = new News("Mad Max: Fury Road", "Action & Adventure", "2015", "sdasdsadasasd");
+        historyList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        historyList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        historyList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        historyList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        historyList.add(news);
+
+        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
+        historyList.add(news);
+
+        mAdapter.notifyDataSetChanged();
     }
 
 
