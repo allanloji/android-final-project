@@ -1,4 +1,4 @@
-package com.allanloji.language_cast;
+package com.allanloji.language_cast.pojo;
 
 /**
  * Created by allan on 10/04/18.
@@ -7,6 +7,7 @@ package com.allanloji.language_cast;
 public class Event {
     private int imageID;
     private String title;
+    public String date;
     private String description;
 
     public Event() {
@@ -15,6 +16,14 @@ public class Event {
     public Event(int imageID, String title) {
         this.imageID = imageID;
         this.title = title;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getImageID() {

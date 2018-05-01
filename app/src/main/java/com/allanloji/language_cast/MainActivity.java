@@ -44,12 +44,20 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
                     return true;
 
+                case R.id.navigation_chatBot:
+                    fragmentManager = getFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.mainContent, new ChatBotFragment());
+                    fragmentTransaction.commit();
+                    return true;
+
                 case R.id.navigation_profile:
                     fragmentManager = getFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.mainContent, new ProfileFragment());
                     fragmentTransaction.commit();
                     return true;
+
             }
             return false;
         }
