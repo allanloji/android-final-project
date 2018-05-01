@@ -8,4 +8,5 @@
     <color name="footerHistoryCard">#1f1f20</color>
     <color name="viewBg">#f1f5f8</color>
     <color name="album_title">#4c4c4c</color>
+    <color name="header_events">#000</color>
 </resources>
