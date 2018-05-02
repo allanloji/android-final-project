@@ -6,6 +6,7 @@ public class News {
     public String date;
     private String description;
     private String direction;
+    private String id;
 
     public News(String image, String title, String date, String description, String direction) {
         this.image = image;
@@ -13,6 +14,18 @@ public class News {
         this.date = date;
         this.description = description;
         this.direction = direction;
+    }
+
+
+    public News() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getImage() {

@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.allanloji.language_cast.pojo.Event;
 import com.allanloji.language_cast.pojo.History;
 import com.allanloji.language_cast.pojo.News;
+import com.android.volley.RequestQueue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,7 @@ public class HistoryFragment extends Fragment {
     private List<News> historyList = new ArrayList<>();
     private RecyclerView recyclerView;
     private HistoryAdapter mAdapter;
+    private RequestQueue mQueue;
 
     public HistoryFragment() {
         // Required empty public constructor

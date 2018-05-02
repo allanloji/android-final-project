@@ -79,7 +79,6 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        Fresco.initialize(getActivity());
     }
 
     @Override

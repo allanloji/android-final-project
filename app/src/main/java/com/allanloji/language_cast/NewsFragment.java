@@ -4,10 +4,12 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,7 +100,8 @@ public class NewsFragment extends Fragment {
             }
         }));
 
-        prepareNewsData();
+        jsonEvents( "https://drive.google.com/uc?export=download&id=1394f_WEJIlJwt_hwpFHvjxrxE2XP2VNk");
+        //prepareNewsData();
 
     }
 
@@ -165,7 +168,38 @@ public class NewsFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+    private void jsonEvents(String url){
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
+                url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    Log.e("entra", response.toString());
+                    JSONArray data = response.getJSONArray("data");
+                    for (int i = 0; i < data.length()-1; i++){
+                        JSONObject jsonObject = data.getJSONObject(i);
+                        News news = new News();
+                        news.setTitle(jsonObject.getString("title"));
+                        news.setDate(jsonObject.getString("date"));
+                        news.setDirection(jsonObject.getString("location"));
+                        news.setImage(jsonObject.getString("full_picture"));
+                        news.setDescription(jsonObject.getString("description"));
+                        news.setId(jsonObject.getString("id"));
+                        newsList.add(news);
+                    }
+                    mAdapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
+            }
+        });
+        mQueue.add(request);
+    }
 
 
 

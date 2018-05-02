@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.mainContent, new NewsFragment());
         fragmentTransaction.commit();
+        Fresco.initialize(this);
 
 
     }

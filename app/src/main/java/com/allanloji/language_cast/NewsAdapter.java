@@ -1,5 +1,6 @@
 package com.allanloji.language_cast;
 
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.allanloji.language_cast.pojo.News;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -15,11 +17,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder>{
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, date;
+        private SimpleDraweeView newsImage;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.newsTitle);
             date = (TextView) view.findViewById(R.id.newsDate);
+            newsImage = view.findViewById(R.id.newsImage);
         }
     }
 
@@ -41,6 +45,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder>{
         News news = newsList.get(position);
         holder.title.setText(news.getTitle());
         holder.date.setText(news.getDate());
+        Uri uri = Uri.parse(news.getImage());
+        holder.newsImage.setImageURI(uri);
     }
 
     @Override
