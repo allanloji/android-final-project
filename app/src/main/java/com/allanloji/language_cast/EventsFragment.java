@@ -19,11 +19,15 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.allanloji.language_cast.pojo.Event;
+import com.allanloji.language_cast.pojo.News;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
@@ -69,6 +73,19 @@ public class EventsFragment extends Fragment{
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Event event = eventList.get(position);
+                Toast.makeText(getApplicationContext(), event.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
 
         prepareAlbums();
     }
@@ -135,35 +152,23 @@ public class EventsFragment extends Fragment{
      */
     private void prepareAlbums() {
 
-        Event a = new Event(10, "True Romance");
+        Event a = new Event("blablabla", "Hahaha");
         eventList.add(a);
 
-        Event b = new Event(10, "True Romance");
-        eventList.add(b);
+        a = new Event("blablabla", "Hahaha");
+        eventList.add(a);
+        a = new Event("blablabla", "Hahaha");
+        eventList.add(a);
+        a = new Event("blablabla", "Hahaha");
+        eventList.add(a);
+        a = new Event("blablabla", "Hahaha");
+        eventList.add(a);
+        a = new Event("blablabla", "Hahaha");
+        eventList.add(a);
+        a = new Event("blablabla", "Hahaha");
+        eventList.add(a);
 
-        Event c = new Event(10, "True Romance");
-        eventList.add(c);
 
-        Event d = new Event(10, "True Romance");
-        eventList.add(d);
-
-        Event e = new Event(10, "True Romance");
-        eventList.add(e);
-
-        Event f = new Event(10, "True Romance");
-        eventList.add(f);
-
-        Event g = new Event(10, "True Romance");
-        eventList.add(g);
-
-        Event h = new Event(10, "True Romance");
-        eventList.add(h);
-
-        Event i = new Event(10, "True Romance");
-        eventList.add(i);
-
-        Event j = new Event(10, "True Romance");
-        eventList.add(j);
 
         adapter.notifyDataSetChanged();
     }

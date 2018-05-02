@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.allanloji.language_cast.pojo.Event;
 import com.allanloji.language_cast.pojo.News;
@@ -65,12 +66,39 @@ public class NewsFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                News news = newsList.get(position);
+                Toast.makeText(getApplicationContext(), news.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
         prepareNewsData();
 
     }
 
     private void prepareNewsData() {
-        News news = new News("Mad Max: Fury Road", "Action & Adventure", "2015", "sdasdsadasasd");
+        News news = new News("Mad Max: Fury Road", "Language Cast Picnic Edition",
+                "07 de Abril de 2018 de 15:00 a 18:00", "Asiste a esta experiencia para aprender y practicar idiomas a la vez que conocemos gente con gustos afines. \n" +
+                "\n" +
+                "Prepara tu mantel de cuadritos, tu canasta de caperucita roja, tu emparedado de crema de maní, tu botella de vino y asiste a nuestra primera edición de Language Cast en el bosque de Chapultepec.\n" +
+                "\n" +
+                "Nos vemos a las 3:00PM en la entrada del chapultepec sobre reforma donde estan los leones, es la entrada mas cercana al centro de cultura digital (la suavicrema) y de ahi nos metos al bosque de chapultepec. (Mapa: https://goo.gl/maps/8ZAaZqofdCJ2)\n" +
+                "\n" +
+                "Contaremos con juegos de mesa, cartas y otras dinamicas de integración, y si nos da tiempo hasta nos subimos a las lanchitas.\n" +
+                "\n" +
+                "Al ser al aire libre, te pedimos por favor que traigas lo que quieras consumir :)", "Entrada Los Leones 1a Seccion De Chapultepec," +
+                "Ciudad de México");
+
+        newsList.add(news);
+
+        /*news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
         newsList.add(news);
 
         news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
@@ -83,10 +111,7 @@ public class NewsFragment extends Fragment {
         newsList.add(news);
 
         news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
-        newsList.add(news);
-
-        news = new News("Inside Out", "Animation, Kids & Family", "2015", "sdadasdsadasdadsadas");
-        newsList.add(news);
+        newsList.add(news);*/
 
         mAdapter.notifyDataSetChanged();
     }
@@ -120,6 +145,8 @@ public class NewsFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 
 
 }

@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_news:
                     fragmentManager = getFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
-                   fragmentTransaction.replace(R.id.mainContent, new NewsFragment());
+                   fragmentTransaction.replace(R.id.mainContent, new EventsFragment());
                     fragmentTransaction.commit();
 
                     return true;
                 case R.id.navigation_events:
                     fragmentManager = getFragmentManager();
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.mainContent, new EventsFragment());
+                    fragmentTransaction.replace(R.id.mainContent, new NewsFragment());
                     fragmentTransaction.commit();
 
                     return true;

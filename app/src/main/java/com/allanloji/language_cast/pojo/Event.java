@@ -5,17 +5,23 @@ package com.allanloji.language_cast.pojo;
  */
 
 public class Event {
-    private int imageID;
+    private String imageID;
     private String title;
     public String date;
     private String description;
 
-    public Event() {
+
+    public Event(String imageID, String description) {
+        this.imageID = imageID;
+        this.description = description;
     }
 
-    public Event(int imageID, String title) {
+    public String getImageID() {
+        return imageID;
+    }
+
+    public void setImageID(String imageID) {
         this.imageID = imageID;
-        this.title = title;
     }
 
     public String getDate() {
@@ -26,13 +32,6 @@ public class Event {
         this.date = date;
     }
 
-    public int getImageID() {
-        return imageID;
-    }
-
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
-    }
 
     public String getTitle() {
         return title;

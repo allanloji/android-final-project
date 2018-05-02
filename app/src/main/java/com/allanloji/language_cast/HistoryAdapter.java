@@ -43,7 +43,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
         News history = historyList.get(position);
         holder.title.setText(history.getTitle());
         holder.date.setText(history.getDate());
-        holder.direction.setText(history.getDescription());
+        holder.direction.setText(history.getDirection());
     }
 
     @Override

@@ -8,8 +8,8 @@
     <string name="fb_login_protocol_scheme">fb220534671842696</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="action_settings">Ajustes</string>
-    <string name="backdrop_title">EVENTOS</string>
-    <string name="backdrop_subtitle">Eventos poulares</string>
+    <string name="post_title">POST</string>
+    <string name="post_subtitle">Ultimos post</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

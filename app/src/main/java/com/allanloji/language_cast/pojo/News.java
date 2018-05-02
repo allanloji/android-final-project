@@ -5,12 +5,14 @@ public class News {
     private String title;
     public String date;
     private String description;
+    private String direction;
 
-    public News(String image, String title, String date, String description) {
+    public News(String image, String title, String date, String description, String direction) {
         this.image = image;
         this.title = title;
         this.date = date;
         this.description = description;
+        this.direction = direction;
     }
 
     public String getImage() {
@@ -43,5 +45,13 @@ public class News {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 }

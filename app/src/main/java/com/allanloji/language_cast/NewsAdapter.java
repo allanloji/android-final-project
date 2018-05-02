@@ -14,11 +14,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder>{
     private List<News> newsList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, year, genre;
+        public TextView title, date;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.newsTitle);
+            date = (TextView) view.findViewById(R.id.newsDate);
         }
     }
 
@@ -39,6 +40,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder>{
     public void onBindViewHolder(MyViewHolder holder, int position) {
         News news = newsList.get(position);
         holder.title.setText(news.getTitle());
+        holder.date.setText(news.getDate());
     }
 
     @Override
