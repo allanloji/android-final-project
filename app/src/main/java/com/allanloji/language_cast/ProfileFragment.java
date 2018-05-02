@@ -4,9 +4,12 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 /**
@@ -26,6 +29,12 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView profileHeaderName, profileHeaderLocation, profileNameDetails, profileLocationDetails,
+                    profileBioDetails;
+
+    private ImageView profileLanguage1, profileLanguage2, profileLanguage3;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -57,6 +66,84 @@ public class ProfileFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        profileHeaderName = view.findViewById(R.id.profileHeaderName);
+        profileHeaderLocation = view.findViewById(R.id.profileHeaderLocation);
+        profileNameDetails = view.findViewById(R.id.profileNameDetails);
+        profileLocationDetails = view.findViewById(R.id.profileLocationDetails);
+        profileBioDetails = view.findViewById(R.id.profileBioDetails);
+        profileLanguage1 = view.findViewById(R.id.profileLanguage1);
+        profileLanguage2 = view.findViewById(R.id.profileLanguage2);
+        profileLanguage3 = view.findViewById(R.id.profileLanguage3);
+
+        profileHeaderName.setText(ProfileSingleton.getInstance().getName());
+        profileHeaderLocation.setText(ProfileSingleton.getInstance().getCity());
+        profileNameDetails.setText(ProfileSingleton.getInstance().getName());
+        profileLocationDetails.setText(ProfileSingleton.getInstance().getCity());
+        profileBioDetails.setText(ProfileSingleton.getInstance().getBiography());
+
+        if(ProfileSingleton.getInstance().getLanguages().size() == 1){
+            profileLanguage1.setVisibility(View.VISIBLE);
+            setFlag(profileLanguage1,0);
+            profileLanguage2.setVisibility(View.INVISIBLE);
+            profileLanguage3.setVisibility(View.INVISIBLE);
+        }else if(ProfileSingleton.getInstance().getLanguages().size() == 2){
+            profileLanguage1.setVisibility(View.VISIBLE);
+            profileLanguage2.setVisibility(View.VISIBLE);
+            setFlag(profileLanguage1,0);
+            setFlag(profileLanguage2,1);
+            profileLanguage3.setVisibility(View.INVISIBLE);
+        }else if(ProfileSingleton.getInstance().getLanguages().size() > 2){
+            profileLanguage1.setVisibility(View.VISIBLE);
+            profileLanguage2.setVisibility(View.VISIBLE);
+            profileLanguage3.setVisibility(View.VISIBLE);
+            setFlag(profileLanguage1,0);
+            setFlag(profileLanguage2,1);
+            setFlag(profileLanguage3,2);
+        }
+
+
+
+
+    }
+
+    public void setFlag(ImageView img, int i){
+        switch (ProfileSingleton.getInstance().getLanguages().get(i)){
+            case "Espanol":
+                img.setImageResource(R.drawable.espanol);
+                break;
+
+            case "Ingles":
+                img.setImageResource(R.drawable.ingles);
+                break;
+
+            case "Italiano":
+                img.setImageResource(R.drawable.italiano);
+                break;
+
+            case "Frances":
+                img.setImageResource(R.drawable.frances);
+                break;
+
+            case "Japones":
+                img.setImageResource(R.drawable.japones);
+                break;
+
+            case "Chino":
+                img.setImageResource(R.drawable.chino);
+                break;
+
+            case "Coreano":
+                img.setImageResource(R.drawable.coreano);
+                break;
+
+            case "Aleman":
+                img.setImageResource(R.drawable.aleman);
+                break;
         }
     }
 

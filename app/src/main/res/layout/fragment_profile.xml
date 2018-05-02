@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/profileHeaderName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -41,18 +41,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/location"
+            android:id="@+id/profileHeaderLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/name"
-            android:layout_alignStart="@+id/name"
-            android:layout_below="@+id/name"
+            android:layout_alignLeft="@+id/profileHeaderName"
+            android:layout_alignStart="@+id/profileHeaderName"
+            android:layout_below="@+id/profileHeaderName"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="LONDRES, INGLATERRA"
             android:textColor="@color/cardview_light_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintTop_toBottomOf="@+id/profileHeaderName" />
 
         <ImageView
             android:id="@+id/profilePic"
@@ -68,7 +68,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/personalDetailsLbl"
+            android:id="@+id/profilePersonalDetailsLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -83,64 +83,64 @@
             app:layout_constraintTop_toBottomOf="@+id/header" />
 
         <TextView
-            android:id="@+id/nameLbl"
+            android:id="@+id/profileNameLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/personalDetailsLbl"
-            android:layout_alignStart="@+id/personalDetailsLbl"
-            android:layout_below="@+id/personalDetailsLbl"
+            android:layout_alignLeft="@+id/profilePersonalDetailsLbl"
+            android:layout_alignStart="@+id/profilePersonalDetailsLbl"
+            android:layout_below="@+id/profilePersonalDetailsLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
             android:text="Nombre"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/personalDetailsLbl" />
+            app:layout_constraintTop_toBottomOf="@+id/profilePersonalDetailsLbl" />
 
         <TextView
-            android:id="@+id/locationLbl"
+            android:id="@+id/profileLocationLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/nameLbl"
-            android:layout_alignStart="@+id/nameLbl"
-            android:layout_below="@+id/nameLbl"
+            android:layout_alignLeft="@+id/profileNameLbl"
+            android:layout_alignStart="@+id/profileNameLbl"
+            android:layout_below="@+id/profileNameLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
             android:text="Ubicacion"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameLbl" />
+            app:layout_constraintTop_toBottomOf="@+id/profileNameLbl" />
 
         <TextView
-            android:id="@+id/cardBioLbl"
+            android:id="@+id/profileBioLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/locationLbl"
-            android:layout_alignStart="@+id/locationLbl"
-            android:layout_below="@+id/locationLbl"
+            android:layout_alignLeft="@+id/profileLocationLbl"
+            android:layout_alignStart="@+id/profileLocationLbl"
+            android:layout_below="@+id/profileLocationLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
             android:text="Biografia"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/locationLbl" />
+            app:layout_constraintTop_toBottomOf="@+id/profileLocationLbl" />
 
         <TextView
-            android:id="@+id/languagesLbl"
+            android:id="@+id/profileLanguagesLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/cardBioLbl"
-            android:layout_alignStart="@+id/cardBioLbl"
-            android:layout_below="@+id/cardBioLbl"
+            android:layout_alignLeft="@+id/profileBioLbl"
+            android:layout_alignStart="@+id/profileBioLbl"
+            android:layout_below="@+id/profileBioLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"
             android:text="Lenguajes"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardBioLbl" />
+            app:layout_constraintTop_toBottomOf="@+id/profileBioLbl" />
 
         <GridLayout
             android:id="@+id/mainGrid"
@@ -160,18 +160,21 @@
 
 
             <ImageView
+                android:id="@+id/profileLanguage1"
                 android:layout_width="130dp"
                 android:layout_height="110dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/espanol" />
 
             <ImageView
+                android:id="@+id/profileLanguage2"
                 android:layout_width="130dp"
                 android:layout_height="110dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ingles" />
 
             <ImageView
+                android:id="@+id/profileLanguage3"
                 android:layout_width="130dp"
                 android:layout_height="110dp"
                 android:layout_gravity="center_horizontal"
@@ -179,7 +182,7 @@
         </GridLayout>
 
         <TextView
-            android:id="@+id/nameDetails"
+            android:id="@+id/profileNameDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
@@ -187,11 +190,11 @@
             android:text="Sarah Parmenter"
             android:textColor="@color/com_facebook_likeboxcountview_border_color"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/nameLbl"
-            app:layout_constraintTop_toBottomOf="@+id/personalDetailsLbl" />
+            app:layout_constraintStart_toEndOf="@+id/profileNameLbl"
+            app:layout_constraintTop_toBottomOf="@+id/profilePersonalDetailsLbl" />
 
         <TextView
-            android:id="@+id/locationDetails"
+            android:id="@+id/profileLocationDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -199,11 +202,11 @@
             android:text="Londres, Inglaterra"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/locationLbl"
-            app:layout_constraintTop_toBottomOf="@+id/nameDetails" />
+            app:layout_constraintStart_toEndOf="@+id/profileLocationLbl"
+            app:layout_constraintTop_toBottomOf="@+id/profileNameDetails" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/profileBioDetails"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -211,8 +214,8 @@
             android:text="Directora de empresa, disenadora y gusto por los perros"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/cardBioLbl"
-            app:layout_constraintTop_toBottomOf="@+id/locationDetails" />
+            app:layout_constraintStart_toEndOf="@+id/profileBioLbl"
+            app:layout_constraintTop_toBottomOf="@+id/profileLocationDetails" />
 
 
     </android.support.constraint.ConstraintLayout>

@@ -97,7 +97,7 @@ public class LanguageSelectionActivity extends Activity {
 
     public void AcceptLanguage(View view){
         Intent it = new Intent( LanguageSelectionActivity.this, MainActivity.class);
-        Log.e("Lenguajes seleccionados", languages.toString());
+        ProfileSingleton.getInstance().setLanguages(languages);
         startActivity(it);
     }
 }

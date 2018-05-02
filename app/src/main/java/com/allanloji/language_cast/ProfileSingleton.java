@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class ProfileSingleton {
     private static ProfileSingleton profileInstance;
-    private String name, city, biography;
+    private String name, city, biography, photo;
     private ArrayList<String> languages;
 
     private ProfileSingleton(){
@@ -65,5 +65,13 @@ public class ProfileSingleton {
 
     public void setLanguages(ArrayList<String> languages) {
         this.languages = languages;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
