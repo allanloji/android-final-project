@@ -50,7 +50,8 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".Create_Profile_Activity" />
         <activity android:name=".LanguageSelectionActivity" />
-        <activity android:name=".EventDetailActivity"></activity>
+        <activity android:name=".EventDetailActivity" />
+        <activity android:name=".HistoryDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.allanloji.language_cast;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.allanloji.language_cast.pojo.Event;
+import com.allanloji.language_cast.pojo.History;
 import com.allanloji.language_cast.pojo.News;
 
 import java.util.ArrayList;
@@ -67,8 +69,15 @@ public class HistoryFragment extends Fragment {
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                News history = historyList.get(position);
-                Toast.makeText(getApplicationContext(), history.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+                News news = historyList.get(position);
+                Intent intent = new Intent(getActivity(), HistoryDetailActivity.class);
+                intent.putExtra("history_title", news.getTitle());
+                intent.putExtra("history_image", news.getImage());
+                intent.putExtra("history_description", news.getDescription());
+                intent.putExtra("history_direction", news.getDirection());
+                intent.putExtra("history_date", news.getDate());
+
+                startActivity(intent);
             }
 
             @Override
