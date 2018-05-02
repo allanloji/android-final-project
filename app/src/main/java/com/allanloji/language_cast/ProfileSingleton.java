@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ProfileSingleton {
     private static ProfileSingleton profileInstance;
-    private String name, city, biography, photo;
+    private String name, city, biography, photo, email;
     private ArrayList<String> languages;
     private AccessToken accessToken;
 
@@ -83,5 +83,13 @@ public class ProfileSingleton {
 
     public void setAccessToken(AccessToken accessToken) {
         this.accessToken = accessToken;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

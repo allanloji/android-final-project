@@ -54,7 +54,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileHeaderName" />
 
-        <ImageView
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/profilePic"
             android:layout_width="87dp"
             android:layout_height="84dp"
@@ -113,7 +113,7 @@
             app:layout_constraintTop_toBottomOf="@+id/profileNameLbl" />
 
         <TextView
-            android:id="@+id/profileBioLbl"
+            android:id="@+id/profileBirthLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/profileLocationLbl"
@@ -121,7 +121,7 @@
             android:layout_below="@+id/profileLocationLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
-            android:text="Biografia"
+            android:text="Email"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -131,16 +131,16 @@
             android:id="@+id/profileLanguagesLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/profileBioLbl"
-            android:layout_alignStart="@+id/profileBioLbl"
-            android:layout_below="@+id/profileBioLbl"
+            android:layout_alignLeft="@+id/profileBirthLbl"
+            android:layout_alignStart="@+id/profileBirthLbl"
+            android:layout_below="@+id/profileBirthLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"
             android:text="Lenguajes"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileBioLbl" />
+            app:layout_constraintTop_toBottomOf="@+id/profileBirthLbl" />
 
         <GridLayout
             android:id="@+id/mainGrid"
@@ -207,15 +207,26 @@
 
         <TextView
             android:id="@+id/profileBioDetails"
-            android:layout_width="220dp"
+            android:layout_width="272dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="30dp"
             android:text="Directora de empresa, disenadora y gusto por los perros"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/profileBioLbl"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/profileBirthLbl"
             app:layout_constraintTop_toBottomOf="@+id/profileLocationDetails" />
+
+        <Button
+            android:id="@+id/profileLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profilePic" />
 
 
     </android.support.constraint.ConstraintLayout>

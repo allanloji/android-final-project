@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,6 +44,8 @@ public class ProfileFragment extends Fragment {
                     profileBioDetails;
 
     private ImageView profileLanguage1, profileLanguage2, profileLanguage3;
+
+    private SimpleDraweeView profile_pic;
 
 
     private OnFragmentInteractionListener mListener;
@@ -75,6 +79,7 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Fresco.initialize(getActivity());
     }
 
     @Override
@@ -87,14 +92,20 @@ public class ProfileFragment extends Fragment {
         profileLanguage1 = view.findViewById(R.id.profileLanguage1);
         profileLanguage2 = view.findViewById(R.id.profileLanguage2);
         profileLanguage3 = view.findViewById(R.id.profileLanguage3);
+        profile_pic = view.findViewById(R.id.profilePic);
 
         GraphRequest request = GraphRequest.newMeRequest(
                 ProfileSingleton.getInstance().getAccessToken(),
                 new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.e("Facebook", response.toString());
-
+                        try {
+                            ProfileSingleton.getInstance().setCity(object.getJSONObject("hometown").getString("name"));
+                            ProfileSingleton.getInstance().setBiography(object.getString("birthday"));
+                            ProfileSingleton.getInstance().setEmail(object.getString("email"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
 
                     }
@@ -109,7 +120,9 @@ public class ProfileFragment extends Fragment {
         profileHeaderLocation.setText(ProfileSingleton.getInstance().getCity());
         profileNameDetails.setText(ProfileSingleton.getInstance().getName());
         profileLocationDetails.setText(ProfileSingleton.getInstance().getCity());
-        profileBioDetails.setText(ProfileSingleton.getInstance().getBiography());
+        profileBioDetails.setText(ProfileSingleton.getInstance().getEmail());
+        Uri uri = Uri.parse(ProfileSingleton.getInstance().getPhoto());
+        profile_pic.setImageURI(uri);
 
         if(ProfileSingleton.getInstance().getLanguages().size() == 1){
             profileLanguage1.setVisibility(View.VISIBLE);
