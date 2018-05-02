@@ -78,7 +78,9 @@ public class EventsFragment extends Fragment{
             @Override
             public void onClick(View view, int position) {
                 Event event = eventList.get(position);
-                Toast.makeText(getApplicationContext(), event.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse(event.getPost_url());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
 
             @Override
@@ -152,20 +154,20 @@ public class EventsFragment extends Fragment{
      */
     private void prepareAlbums() {
 
-        Event a = new Event("blablabla", "Hahaha");
+        Event a = new Event("blablabla", "Hahaha", "https://www.facebook.com/nurindeutschland/photos/a.749397398566078.1073741829.560574517448368/905828916256258/?type=3&theater");
         eventList.add(a);
 
-        a = new Event("blablabla", "Hahaha");
+        a = new Event("blablabla", "Hahaha", "https://www.facebook.com/nurindeutschland/photos/a.749397398566078.1073741829.560574517448368/905828916256258/?type=3&theater");
         eventList.add(a);
-        a = new Event("blablabla", "Hahaha");
+        a = new Event("blablabla", "Hahaha", "https://www.facebook.com/nurindeutschland/photos/a.749397398566078.1073741829.560574517448368/905828916256258/?type=3&theater");
         eventList.add(a);
-        a = new Event("blablabla", "Hahaha");
+        a = new Event("blablabla", "Hahaha", "https://www.facebook.com/nurindeutschland/photos/a.749397398566078.1073741829.560574517448368/905828916256258/?type=3&theater");
         eventList.add(a);
-        a = new Event("blablabla", "Hahaha");
+        a = new Event("blablabla", "Hahaha", "https://www.facebook.com/nurindeutschland/photos/a.749397398566078.1073741829.560574517448368/905828916256258/?type=3&theater");
         eventList.add(a);
-        a = new Event("blablabla", "Hahaha");
+        a = new Event("blablabla", "Hahaha", "https://www.facebook.com/nurindeutschland/photos/a.749397398566078.1073741829.560574517448368/905828916256258/?type=3&theater");
         eventList.add(a);
-        a = new Event("blablabla", "Hahaha");
+        a = new Event("blablabla", "Hahaha", "https://www.facebook.com/nurindeutschland/photos/a.749397398566078.1073741829.560574517448368/905828916256258/?type=3&theater");
         eventList.add(a);
 
 

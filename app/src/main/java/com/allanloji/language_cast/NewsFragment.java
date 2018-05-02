@@ -1,6 +1,7 @@
 package com.allanloji.language_cast;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -70,7 +71,14 @@ public class NewsFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 News news = newsList.get(position);
-                Toast.makeText(getApplicationContext(), news.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), EventDetailActivity.class);
+                intent.putExtra("event_title", news.getTitle());
+                intent.putExtra("event_image", news.getImage());
+                intent.putExtra("event_description", news.getDescription());
+                intent.putExtra("event_direction", news.getDirection());
+                intent.putExtra("event_date", news.getDate());
+
+                startActivity(intent);
             }
 
             @Override

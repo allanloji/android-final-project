@@ -14,24 +14,23 @@ import java.util.List;
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHolder> {
     private Context mContext;
-    private List<Event> albumList;
+    private List<Event> eventList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, count;
-        public ImageView thumbnail, overflow;
+        public TextView title;
+        public ImageView thumbnail;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
-            count = (TextView) view.findViewById(R.id.count);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
         }
     }
 
 
-    public EventsAdapter(Context mContext, List<Event> albumList) {
+    public EventsAdapter(Context mContext, List<Event> eventList) {
         this.mContext = mContext;
-        this.albumList = albumList;
+        this.eventList = eventList;
     }
 
     @Override
@@ -44,9 +43,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Event event = albumList.get(position);
+        Event event = eventList.get(position);
         holder.title.setText(event.getDescription());
-        holder.count.setText(event.getDate());
 
         // loading album cover using Glide library
         //Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);
@@ -56,7 +54,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return albumList.size();
+        return eventList.size();
     }
 }
 

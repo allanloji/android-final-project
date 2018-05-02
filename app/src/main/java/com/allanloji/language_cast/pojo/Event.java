@@ -9,11 +9,21 @@ public class Event {
     private String title;
     public String date;
     private String description;
+    private String post_url;
 
 
-    public Event(String imageID, String description) {
+    public Event(String imageID, String description, String post_url) {
         this.imageID = imageID;
         this.description = description;
+        this.post_url = post_url;
+    }
+
+    public String getPost_url() {
+        return post_url;
+    }
+
+    public void setPost_url(String post_url) {
+        this.post_url = post_url;
     }
 
     public String getImageID() {

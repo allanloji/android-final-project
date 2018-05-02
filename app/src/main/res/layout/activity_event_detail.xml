@@ -7,7 +7,7 @@
     tools:context="com.allanloji.language_cast.EventDetailActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/eventDetailImg"
         android:layout_width="0dp"
         android:layout_height="267dp"
         android:layout_marginTop="-1dp"
@@ -19,28 +19,62 @@
         app:srcCompat="@drawable/newyork" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/eventDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Language Cast Picnic Edition"
         android:textColor="@color/cardview_dark_background"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/eventDetailImg" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/eventDetailDescription"
         android:layout_width="369dp"
-        android:layout_height="308dp"
-        android:layout_marginTop="23dp"
+        android:layout_height="293dp"
+        android:layout_marginTop="10dp"
         android:text="Asiste a esta experiencia para aprender y practicar idiomas a la vez que conocemos gente con gustos afines.   Prepara tu mantel de cuadritos, tu canasta de caperucita roja, tu emparedado de crema de maní, tu botella de vino y asiste a nuestra primera edición de Language Cast en el bosque de Chapultepec.  Nos vemos a las 3:00PM en la entrada del chapultepec sobre reforma donde estan los leones, es la entrada mas cercana al centro de cultura digital (la suavicrema) y de ahi nos metos al bosque de chapultepec. (Mapa: https://goo.gl/maps/8ZAaZqofdCJ2)"
-        android:textSize="18sp"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventDetailDirection" />
+
+    <TextView
+        android:id="@+id/eventDetailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventDetailTitle" />
+
+    <TextView
+        android:id="@+id/eventDetailDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventDetailDate" />
+
+    <Button
+        android:id="@+id/eventDetailBttn"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_border"
+        android:text="Asistir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
