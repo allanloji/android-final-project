@@ -4,12 +4,20 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 /**
@@ -80,6 +88,23 @@ public class ProfileFragment extends Fragment {
         profileLanguage2 = view.findViewById(R.id.profileLanguage2);
         profileLanguage3 = view.findViewById(R.id.profileLanguage3);
 
+        GraphRequest request = GraphRequest.newMeRequest(
+                ProfileSingleton.getInstance().getAccessToken(),
+                new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        Log.e("Facebook", response.toString());
+
+
+
+                    }
+                });
+
+        Bundle parameters = new Bundle();
+        parameters.putString("fields", "hometown,birthday,email");
+        request.setParameters(parameters);
+        request.executeAsync();
+
         profileHeaderName.setText(ProfileSingleton.getInstance().getName());
         profileHeaderLocation.setText(ProfileSingleton.getInstance().getCity());
         profileNameDetails.setText(ProfileSingleton.getInstance().getName());
@@ -105,6 +130,7 @@ public class ProfileFragment extends Fragment {
             setFlag(profileLanguage2,1);
             setFlag(profileLanguage3,2);
         }
+
 
 
 

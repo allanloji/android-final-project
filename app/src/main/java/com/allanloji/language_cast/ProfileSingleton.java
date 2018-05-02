@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.facebook.AccessToken;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,7 @@ public class ProfileSingleton {
     private static ProfileSingleton profileInstance;
     private String name, city, biography, photo;
     private ArrayList<String> languages;
+    private AccessToken accessToken;
 
     private ProfileSingleton(){
     }
@@ -73,5 +75,13 @@ public class ProfileSingleton {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public AccessToken getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(AccessToken accessToken) {
+        this.accessToken = accessToken;
     }
 }

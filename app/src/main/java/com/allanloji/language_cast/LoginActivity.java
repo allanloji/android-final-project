@@ -3,6 +3,7 @@ package com.allanloji.language_cast;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Debug;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,7 @@ import static android.content.ContentValues.TAG;
 public class LoginActivity extends Activity {
     private FirebaseAuth mAuth;
     private CallbackManager mCallbackManager;
+    private  AccessToken token1 = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class LoginActivity extends Activity {
         mCallbackManager = CallbackManager.Factory.create();
         LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
 
-        loginButton.setReadPermissions("email", "public_profile");
+        loginButton.setReadPermissions("email", "public_profile","user_hometown", "user_birthday");
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -82,7 +84,7 @@ public class LoginActivity extends Activity {
 
     private void handleFacebookAccessToken(AccessToken token) {
         Log.d(TAG, "handleFacebookAccessToken:" + token);
-
+        token1 = token;
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -114,6 +116,9 @@ public class LoginActivity extends Activity {
     private void updateUI(FirebaseUser user) {
 
         if (user != null) {
+            ProfileSingleton.getInstance().setAccessToken(token1);
+            ProfileSingleton.getInstance().setName(user.getDisplayName().toString());
+            ProfileSingleton.getInstance().setPhoto(user.getPhotoUrl().toString());
             Intent it = new Intent( LoginActivity.this, LanguageSelectionActivity.class);
             startActivity(it);
         } else {
