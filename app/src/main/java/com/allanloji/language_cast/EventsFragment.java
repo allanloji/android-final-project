@@ -25,9 +25,18 @@ import android.widget.Toast;
 
 import com.allanloji.language_cast.pojo.Event;
 import com.allanloji.language_cast.pojo.News;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +55,8 @@ public class EventsFragment extends Fragment{
     private RecyclerView recyclerView;
     private EventsAdapter adapter;
     private List<Event> eventList;
+    private RequestQueue mQueue;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -72,6 +83,7 @@ public class EventsFragment extends Fragment{
 
         eventList = new ArrayList<>();
         adapter = new EventsAdapter(this.getActivity(), eventList);
+        mQueue = VolleySingleton.getInstance(getActivity()).getRequestQueue();
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -83,7 +95,7 @@ public class EventsFragment extends Fragment{
             @Override
             public void onClick(View view, int position) {
                 Event event = eventList.get(position);
-                Uri uri = Uri.parse(event.getPost_url());
+                Uri uri = Uri.parse("https://www.facebook.com/" + event.getId());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -94,7 +106,8 @@ public class EventsFragment extends Fragment{
             }
         }));
 
-        prepareAlbums();
+        jsonPosts( "https://drive.google.com/uc?export=download&id=1A698FwDXIyhmpUsJPYVKHij-kCr2mkiL");
+        //prepareAlbums();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -224,6 +237,36 @@ public class EventsFragment extends Fragment{
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    private void jsonPosts(String url){
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
+                url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    Log.e("entra", response.toString());
+                    JSONArray data = response.getJSONArray("data");
+                    for (int i = 0; i < data.length(); i++){
+                        JSONObject jsonObject = data.getJSONObject(i);
+                        Event event = new Event();
+                        event.setTitle(jsonObject.getString("description").substring(0, 30));
+                        event.setImageID(jsonObject.getString("full_picture"));
+                        event.setId(jsonObject.getString("id"));
+                        eventList.add(event);
+                    }
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        mQueue.add(request);
     }
 
 

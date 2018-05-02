@@ -1,6 +1,7 @@
 package com.allanloji.language_cast;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.allanloji.language_cast.pojo.Event;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -18,12 +20,12 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
-        public ImageView thumbnail;
+        public SimpleDraweeView thumbnail;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
-            thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            thumbnail = view.findViewById(R.id.thumbnail);
         }
     }
 
@@ -44,10 +46,10 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Event event = eventList.get(position);
-        holder.title.setText(event.getDescription());
+        holder.title.setText(event.getTitle());
+        Uri uri = Uri.parse(event.getImageID());
+        holder.thumbnail.setImageURI(uri);
 
-        // loading album cover using Glide library
-        //Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);
 
     }
 
