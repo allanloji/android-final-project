@@ -90,6 +90,7 @@ public class NewsFragment extends Fragment {
                 intent.putExtra("event_description", news.getDescription());
                 intent.putExtra("event_direction", news.getDirection());
                 intent.putExtra("event_date", news.getDate());
+                intent.putExtra("event_id", news.getId());
 
                 startActivity(intent);
             }
@@ -174,7 +175,6 @@ public class NewsFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Log.e("entra", response.toString());
                     JSONArray data = response.getJSONArray("data");
                     for (int i = 0; i < data.length()-1; i++){
                         JSONObject jsonObject = data.getJSONObject(i);

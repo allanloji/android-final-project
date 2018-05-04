@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,7 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class HistoryFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    private List<News> historyList = new ArrayList<>();
+    private ArrayList<News> historyList = new ArrayList<>();
     private RecyclerView recyclerView;
     private HistoryAdapter mAdapter;
     private RequestQueue mQueue;
@@ -93,7 +94,12 @@ public class HistoryFragment extends Fragment {
     }
 
     private void prepareHistoryData() {
-        News news = new News("Mad Max: Fury Road", "Language Cast Picnic Edition",
+       historyList.clear();
+        for (News news:
+             ProfileSingleton.getInstance().getHistoryList()) {
+            historyList.add(news);
+        }
+        /*News news = new News("Mad Max: Fury Road", "Language Cast Picnic Edition",
                 "07 de Abril de 2018 de 15:00 a 18:00", "Asiste a esta experiencia para aprender y practicar idiomas a la vez que conocemos gente con gustos afines. \n" +
                 "\n" +
                 "Prepara tu mantel de cuadritos, tu canasta de caperucita roja, tu emparedado de crema de maní, tu botella de vino y asiste a nuestra primera edición de Language Cast en el bosque de Chapultepec.\n" +

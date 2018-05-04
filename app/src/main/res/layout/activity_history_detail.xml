@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.allanloji.language_cast.EventDetailActivity">
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/historyDetailImg"
         android:layout_width="0dp"
         android:layout_height="267dp"
@@ -37,6 +37,7 @@
         android:layout_width="369dp"
         android:layout_height="293dp"
         android:layout_marginTop="10dp"
+        android:scrollbars = "vertical"
         android:text="Asiste a esta experiencia para aprender y practicar idiomas a la vez que conocemos gente con gustos afines.   Prepara tu mantel de cuadritos, tu canasta de caperucita roja, tu emparedado de crema de maní, tu botella de vino y asiste a nuestra primera edición de Language Cast en el bosque de Chapultepec.  Nos vemos a las 3:00PM en la entrada del chapultepec sobre reforma donde estan los leones, es la entrada mas cercana al centro de cultura digital (la suavicrema) y de ahi nos metos al bosque de chapultepec. (Mapa: https://goo.gl/maps/8ZAaZqofdCJ2)"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -2,19 +2,23 @@ package com.allanloji.language_cast;
 
 import android.content.Context;
 
+import com.allanloji.language_cast.pojo.News;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.facebook.AccessToken;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileSingleton {
     private static ProfileSingleton profileInstance;
     private String name, city, biography, photo, email;
     private ArrayList<String> languages;
     private AccessToken accessToken;
+    private ArrayList<News> historyList;
 
     private ProfileSingleton(){
+        historyList = new ArrayList<>();
     }
 
     public synchronized static void createProfileInstance(){
@@ -35,6 +39,14 @@ public class ProfileSingleton {
 
     public static void setProfileInstance(ProfileSingleton profileInstance) {
         ProfileSingleton.profileInstance = profileInstance;
+    }
+
+    public ArrayList<News> getHistoryList() {
+        return historyList;
+    }
+
+    public void setHistoryList(ArrayList<News> historyList) {
+        this.historyList = historyList;
     }
 
     public String getName() {

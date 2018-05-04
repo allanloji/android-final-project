@@ -1,6 +1,7 @@
 package com.allanloji.language_cast;
 
 import android.graphics.Movie;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.allanloji.language_cast.pojo.News;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -16,12 +18,14 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, date, direction;
+        public SimpleDraweeView img;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.historyTitle);
             date = (TextView) view.findViewById(R.id.historyDate);
             direction = (TextView) view.findViewById(R.id.historyDirection);
+            img = view.findViewById(R.id.historyImage);
         }
     }
 
@@ -44,6 +48,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
         holder.title.setText(history.getTitle());
         holder.date.setText(history.getDate());
         holder.direction.setText(history.getDirection());
+        Uri uri = Uri.parse(history.getImage());
+        holder.img.setImageURI(uri);
     }
 
     @Override
