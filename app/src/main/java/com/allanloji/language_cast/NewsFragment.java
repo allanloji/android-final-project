@@ -101,7 +101,7 @@ public class NewsFragment extends Fragment {
             }
         }));
 
-        jsonEvents( "https://drive.google.com/uc?export=download&id=1394f_WEJIlJwt_hwpFHvjxrxE2XP2VNk");
+        jsonEvents( "https://drive.google.com/uc?export=download&id=15Sfj0i7ztdI4-9KcCNzVL8W8yZ2CmQci");
         //prepareNewsData();
 
     }
@@ -185,6 +185,10 @@ public class NewsFragment extends Fragment {
                         news.setImage(jsonObject.getString("full_picture"));
                         news.setDescription(jsonObject.getString("description"));
                         news.setId(jsonObject.getString("id"));
+                        JSONObject coordinates = jsonObject.getJSONObject("coordinates");
+                        news.setLatitude(coordinates.getString("lat"));
+                        news.setLongitude(coordinates.getString("long"));
+
                         newsList.add(news);
                     }
                     mAdapter.notifyDataSetChanged();

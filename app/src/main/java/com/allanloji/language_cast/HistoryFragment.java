@@ -79,6 +79,8 @@ public class HistoryFragment extends Fragment {
                 intent.putExtra("history_description", news.getDescription());
                 intent.putExtra("history_direction", news.getDirection());
                 intent.putExtra("history_date", news.getDate());
+                intent.putExtra("history_latitude", news.getLatitude());
+                intent.putExtra("history_longitude", news.getLongitude());
 
                 startActivity(intent);
             }

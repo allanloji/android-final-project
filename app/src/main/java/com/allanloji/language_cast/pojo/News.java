@@ -7,6 +7,7 @@ public class News {
     private String description;
     private String direction;
     private String id;
+    private  String latitude, longitude;
 
     public News(String image, String title, String date, String description, String direction) {
         this.image = image;
@@ -18,6 +19,22 @@ public class News {
 
 
     public News() {
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public String getId() {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ public class HistoryDetailActivity extends Activity {
     private SimpleDraweeView image;
     private Button bttn;
 
-    private String historyTitle, historyDirection, historyDate, historyDescription, eventImage;
+    private String historyTitle, historyDirection, historyDate, historyDescription, eventImage, eventLatitude, eventLongitude;
 
 
     @Override
@@ -35,6 +36,8 @@ public class HistoryDetailActivity extends Activity {
         historyDescription = (String) getIntent().getSerializableExtra("history_description");
 
         eventImage = (String) getIntent().getSerializableExtra("history_image");
+        eventLatitude = (String) getIntent().getSerializableExtra("history_latitude");
+
 
         Uri uri = Uri.parse(eventImage);
         image.setImageURI(uri);
@@ -44,5 +47,9 @@ public class HistoryDetailActivity extends Activity {
         date.setText(historyDate);
         description.setText(historyDescription);
         description.setMovementMethod(new ScrollingMovementMethod());
+    }
+
+    public void LocationClick(View v){
+
     }
 }
