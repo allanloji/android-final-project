@@ -91,6 +91,8 @@ public class NewsFragment extends Fragment {
                 intent.putExtra("event_direction", news.getDirection());
                 intent.putExtra("event_date", news.getDate());
                 intent.putExtra("event_id", news.getId());
+                intent.putExtra("event_lat", news.getLatitude());
+                intent.putExtra("event_long", news.getLongitude());
 
                 startActivity(intent);
             }

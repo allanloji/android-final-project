@@ -1,6 +1,7 @@
 package com.allanloji.language_cast;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -13,7 +14,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 public class HistoryDetailActivity extends Activity {
     private TextView title, direction, date, description;
     private SimpleDraweeView image;
-    private Button bttn;
 
     private String historyTitle, historyDirection, historyDate, historyDescription, eventImage, eventLatitude, eventLongitude;
 
@@ -27,7 +27,6 @@ public class HistoryDetailActivity extends Activity {
         direction = (TextView) findViewById(R.id.historyDetailDirection);
         date = (TextView) findViewById(R.id.historyDetailDate);
         description = (TextView) findViewById(R.id.historyDetailDescription);
-        bttn = (Button) findViewById(R.id.historyDetailBttn);
         image = findViewById(R.id.historyDetailImg);
 
         historyTitle = (String) getIntent().getSerializableExtra("history_title");
@@ -37,7 +36,7 @@ public class HistoryDetailActivity extends Activity {
 
         eventImage = (String) getIntent().getSerializableExtra("history_image");
         eventLatitude = (String) getIntent().getSerializableExtra("history_latitude");
-
+        eventLongitude = (String) getIntent().getSerializableExtra("history_longitude");
 
         Uri uri = Uri.parse(eventImage);
         image.setImageURI(uri);
@@ -49,7 +48,11 @@ public class HistoryDetailActivity extends Activity {
         description.setMovementMethod(new ScrollingMovementMethod());
     }
 
-    public void LocationClick(View v){
-
+    public void seeLocation(View v){
+        Intent intent = new Intent(this, MapsActivity.class);
+        intent.putExtra("history_title", historyTitle);
+        intent.putExtra("history_latitude", eventLatitude);
+        intent.putExtra("history_longitude", eventLongitude);
+        startActivity(intent);
     }
 }

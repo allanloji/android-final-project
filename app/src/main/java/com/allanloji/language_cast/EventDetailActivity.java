@@ -70,6 +70,8 @@ public class EventDetailActivity extends Activity {
     public void Assist(View v){
         News news = new News(eventImage, eventTitle, eventDate, eventDescription,eventDirection);
         news.setId(eventId);
+        news.setLatitude((String) getIntent().getSerializableExtra("event_lat"));
+        news.setLongitude((String) getIntent().getSerializableExtra("event_long"));
         ProfileSingleton.getInstance().getHistoryList().add(news);
         Toast toast = Toast.makeText(getApplicationContext(), "Se ha registrado este evento", Toast.LENGTH_SHORT);
         toast.show();
