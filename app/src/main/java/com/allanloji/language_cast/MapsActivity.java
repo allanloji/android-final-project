@@ -73,7 +73,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        mQueue = VolleySingleton.getInstance(getApplicationContext()).getRequestQueue();
     }
 
     public boolean checkLocationPermission() {
@@ -115,6 +114,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         /*LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+        LatLng place = new LatLng(Double.parseDouble((String) getIntent().getSerializableExtra("history_latitude")), Double.parseDouble((String) getIntent().getSerializableExtra("history_longitude")));
+        mMap.addMarker(new MarkerOptions().position(place).title((String) getIntent().getSerializableExtra("history_title")));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(place));
+
+
 
 
     }
