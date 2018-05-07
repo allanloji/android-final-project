@@ -19,13 +19,15 @@
         android:title="Historial" />
 
     <item
+        android:id="@+id/navigation_chatBot"
+        android:icon="@drawable/robot"
+        android:title="ChatBot" />
+
+    <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/profile_icon"
         android:title="Perfil" />
 
-    <item
-        android:id="@+id/navigation_chatBot"
-        android:icon="@drawable/profile_icon"
-        android:title="ChatBot" />
+
 
 </menu>

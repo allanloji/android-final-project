@@ -250,7 +250,7 @@ public class EventsFragment extends Fragment{
                     for (int i = 0; i < data.length(); i++){
                         JSONObject jsonObject = data.getJSONObject(i);
                         Event event = new Event();
-                        event.setTitle(jsonObject.getString("description").substring(0, 30));
+                        event.setTitle(jsonObject.getString("description").substring(0, 40) + "...");
                         event.setImageID(jsonObject.getString("full_picture"));
                         event.setId(jsonObject.getString("id"));
                         eventList.add(event);

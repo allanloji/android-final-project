@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Language-Cast</string>
     <string name="title_activity_main">MainActivity</string>
@@ -7,10 +8,9 @@
     <string name="facebook_app_id">220534671842696</string>
     <string name="fb_login_protocol_scheme">fb220534671842696</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="action_settings">Ajustes</string>
+    <string name="action_settings">Settings</string>
     <string name="post_title">POST</string>
-    <string name="post_subtitle">Últimos posts</string>
-    <string name="profile_default_city">Ciudad de México</string>
-    <string name="profile_default_email">No se pudo obtener email</string>
-
+    <string name="post_subtitle">Recent posts</string>
+    <string name="profile_default_city">Mexico City</string>
+    <string name="profile_default_email">Can\'t retrieve email</string>
 </resources>

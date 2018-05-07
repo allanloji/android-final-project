@@ -49,10 +49,11 @@
             android:layout_below="@+id/profileHeaderName"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="LONDRES, INGLATERRA"
+            android:text="@string/profile_default_city"
             android:textColor="@color/cardview_light_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileHeaderName" />
+            app:layout_constraintTop_toBottomOf="@+id/profileHeaderName"
+            tools:text="@string/profile_default_city" />
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/profilePic"
@@ -199,11 +200,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="30dp"
-            android:text="Londres, Inglaterra"
+            android:text="@string/profile_default_city"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/profileLocationLbl"
-            app:layout_constraintTop_toBottomOf="@+id/profileNameDetails" />
+            app:layout_constraintTop_toBottomOf="@+id/profileNameDetails"
+            tools:text="@string/profile_default_city" />
 
         <TextView
             android:id="@+id/profileBioDetails"
@@ -211,7 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="30dp"
-            android:text="Directora de empresa, disenadora y gusto por los perros"
+            android:text="@string/profile_default_email"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/profileBirthLbl"

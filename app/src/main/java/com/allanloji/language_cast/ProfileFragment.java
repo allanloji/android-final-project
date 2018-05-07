@@ -93,33 +93,38 @@ public class ProfileFragment extends Fragment {
         profileLanguage3 = view.findViewById(R.id.profileLanguage3);
         profile_pic = view.findViewById(R.id.profilePic);
 
-        GraphRequest request = GraphRequest.newMeRequest(
-                ProfileSingleton.getInstance().getAccessToken(),
-                new GraphRequest.GraphJSONObjectCallback() {
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        try {
-                            ProfileSingleton.getInstance().setCity(object.getJSONObject("hometown").getString("name"));
-                            ProfileSingleton.getInstance().setBiography(object.getString("birthday"));
-                            ProfileSingleton.getInstance().setEmail(object.getString("email"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+        if(ProfileSingleton.getInstance().getAccessToken() != null){
+            GraphRequest request = GraphRequest.newMeRequest(
+                    ProfileSingleton.getInstance().getAccessToken(),
+                    new GraphRequest.GraphJSONObjectCallback() {
+                        @Override
+                        public void onCompleted(JSONObject object, GraphResponse response) {
+                            try {
+                                ProfileSingleton.getInstance().setCity(object.getJSONObject("hometown").getString("name"));
+                                ProfileSingleton.getInstance().setBiography(object.getString("birthday"));
+                                ProfileSingleton.getInstance().setEmail(object.getString("email"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+
                         }
+                    });
+
+            Bundle parameters = new Bundle();
+            parameters.putString("fields", "hometown,birthday,email");
+            request.setParameters(parameters);
+            request.executeAsync();
+            profileHeaderLocation.setText(ProfileSingleton.getInstance().getCity());
+            profileLocationDetails.setText(ProfileSingleton.getInstance().getCity());
+            profileBioDetails.setText(ProfileSingleton.getInstance().getEmail());
+        }
 
 
-                    }
-                });
-
-        Bundle parameters = new Bundle();
-        parameters.putString("fields", "hometown,birthday,email");
-        request.setParameters(parameters);
-        request.executeAsync();
 
         profileHeaderName.setText(ProfileSingleton.getInstance().getName());
-        profileHeaderLocation.setText(ProfileSingleton.getInstance().getCity());
         profileNameDetails.setText(ProfileSingleton.getInstance().getName());
-        profileLocationDetails.setText(ProfileSingleton.getInstance().getCity());
-        profileBioDetails.setText(ProfileSingleton.getInstance().getEmail());
+
         Uri uri = Uri.parse(ProfileSingleton.getInstance().getPhoto());
         profile_pic.setImageURI(uri);
 

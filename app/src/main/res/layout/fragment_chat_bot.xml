@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChatBotFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="500dp"
+            android:layout_height="800dp"
+            android:adjustViewBounds="false"
+            android:contentDescription="BackgroundChat"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/splashscreen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/chatView"
+            android:layout_width="350dp"
+            android:layout_height="650dp"
+            android:layout_marginBottom="6dp"
+            android:scrollbars="vertical"
+            android:textColor="@color/album_title"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/chatButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/chatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginStart="18dp"
+            android:text="Enviar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chatText" />
+
+        <EditText
+            android:id="@+id/chatText"
+            android:layout_width="270sp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:ems="10"
+            android:hint="Escribe un mensaje"
+            android:inputType="textPersonName"
+            android:textColor="@color/cardview_dark_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
 
 </FrameLayout>
