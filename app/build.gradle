@@ -43,6 +43,7 @@ dependencies {
     implementation 'ai.api:libai:1.6.12'
     implementation 'commons-io:commons-io:2.4'
     implementation 'com.google.code.gson:gson:2.8.1'
+    implementation files('/Users/allanlopez/AndroidStudioProjects/android-final-project/YouTubeAndroidPlayerApi.jar')
 }
 
 

@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="170dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -76,7 +76,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/header"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="Detalles Personales"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
@@ -91,7 +91,7 @@
             android:layout_alignStart="@+id/profilePersonalDetailsLbl"
             android:layout_below="@+id/profilePersonalDetailsLbl"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="Nombre"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
@@ -136,7 +136,7 @@
             android:layout_alignStart="@+id/profileBirthLbl"
             android:layout_below="@+id/profileBirthLbl"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:text="Lenguajes"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
@@ -146,18 +146,18 @@
         <GridLayout
             android:id="@+id/mainGrid"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginBottom="50dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="8"
             android:alignmentMode="alignMargins"
             android:columnCount="3"
             android:columnOrderPreserved="false"
             android:padding="14dp"
             android:rowCount="2"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileLanguagesLbl">
 
 
             <ImageView
@@ -187,7 +187,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="Sarah Parmenter"
             android:textColor="@color/com_facebook_likeboxcountview_border_color"
             android:textSize="20sp"
@@ -229,6 +229,19 @@
             android:text="Logout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/videoView"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginStart="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </android.support.constraint.ConstraintLayout>
