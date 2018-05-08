@@ -9,7 +9,7 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/eventDetailImg"
         android:layout_width="0dp"
-        android:layout_height="267dp"
+        android:layout_height="220dp"
         android:layout_marginTop="-1dp"
         android:background="@drawable/newyork"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,13 +35,13 @@
     <TextView
         android:id="@+id/eventDetailDescription"
         android:layout_width="369dp"
-        android:layout_height="293dp"
+        android:layout_height="181dp"
         android:layout_marginTop="10dp"
+        android:scrollbars="vertical"
         android:text="Asiste a esta experiencia para aprender y practicar idiomas a la vez que conocemos gente con gustos afines.   Prepara tu mantel de cuadritos, tu canasta de caperucita roja, tu emparedado de crema de maní, tu botella de vino y asiste a nuestra primera edición de Language Cast en el bosque de Chapultepec.  Nos vemos a las 3:00PM en la entrada del chapultepec sobre reforma donde estan los leones, es la entrada mas cercana al centro de cultura digital (la suavicrema) y de ahi nos metos al bosque de chapultepec. (Mapa: https://goo.gl/maps/8ZAaZqofdCJ2)"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:scrollbars = "vertical"
         app:layout_constraintTop_toBottomOf="@+id/eventDetailDirection" />
 
     <TextView
@@ -70,13 +70,23 @@
         android:id="@+id/eventDetailBttn"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="160dp"
         android:background="@drawable/button_border"
         android:onClick="Assist"
         android:text="Asistir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/videoView"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
