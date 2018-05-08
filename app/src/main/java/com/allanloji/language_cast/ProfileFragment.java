@@ -93,7 +93,7 @@ public class ProfileFragment extends Fragment {
         profileLanguage3 = view.findViewById(R.id.profileLanguage3);
         profile_pic = view.findViewById(R.id.profilePic);
 
-        if(ProfileSingleton.getInstance().getAccessToken() != null){
+        if(ProfileSingleton.getInstance().getAccessToken() != null && !ProfileSingleton.getInstance().getName().equals("")){
             GraphRequest request = GraphRequest.newMeRequest(
                     ProfileSingleton.getInstance().getAccessToken(),
                     new GraphRequest.GraphJSONObjectCallback() {
@@ -115,18 +115,22 @@ public class ProfileFragment extends Fragment {
             parameters.putString("fields", "hometown,birthday,email");
             request.setParameters(parameters);
             request.executeAsync();
-            profileHeaderLocation.setText(ProfileSingleton.getInstance().getCity());
-            profileLocationDetails.setText(ProfileSingleton.getInstance().getCity());
-            profileBioDetails.setText(ProfileSingleton.getInstance().getEmail());
+            if(!ProfileSingleton.getInstance().getName().equals("")){
+                profileHeaderLocation.setText(ProfileSingleton.getInstance().getCity());
+                profileLocationDetails.setText(ProfileSingleton.getInstance().getCity());
+                profileBioDetails.setText(ProfileSingleton.getInstance().getEmail());
+                profileHeaderName.setText(ProfileSingleton.getInstance().getName());
+                profileNameDetails.setText(ProfileSingleton.getInstance().getName());
+
+                Uri uri = Uri.parse(ProfileSingleton.getInstance().getPhoto());
+                profile_pic.setImageURI(uri);
+            }
+
         }
 
 
 
-        profileHeaderName.setText(ProfileSingleton.getInstance().getName());
-        profileNameDetails.setText(ProfileSingleton.getInstance().getName());
 
-        Uri uri = Uri.parse(ProfileSingleton.getInstance().getPhoto());
-        profile_pic.setImageURI(uri);
 
         if(ProfileSingleton.getInstance().getLanguages().size() == 1){
             profileLanguage1.setVisibility(View.VISIBLE);

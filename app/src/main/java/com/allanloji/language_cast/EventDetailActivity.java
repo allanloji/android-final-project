@@ -93,6 +93,7 @@ public class EventDetailActivity extends YouTubeBaseActivity implements YouTubeP
     public void Assist(View v){
         News news = new News(eventImage, eventTitle, eventDate, eventDescription,eventDirection);
         news.setId(eventId);
+        bttn.setVisibility(View.INVISIBLE);
         news.setLatitude((String) getIntent().getSerializableExtra("event_lat"));
         news.setLongitude((String) getIntent().getSerializableExtra("event_long"));
         ProfileSingleton.getInstance().getHistoryList().add(news);
