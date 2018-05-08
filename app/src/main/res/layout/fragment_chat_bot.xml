@@ -64,6 +64,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <ListView
+            android:id="@+id/list_message"
+            android:layout_width="match_parent"
+            android:layout_height="656dp"
+            app:layout_constraintBottom_toTopOf="@+id/chatText"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
     </android.support.constraint.ConstraintLayout>
 
 

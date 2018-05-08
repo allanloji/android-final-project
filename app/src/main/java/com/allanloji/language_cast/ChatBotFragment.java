@@ -11,7 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.allanloji.language_cast.pojo.ChatModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import ai.api.AIDataService;
 import ai.api.AIListener;
@@ -34,8 +40,10 @@ public class ChatBotFragment extends Fragment implements AIListener{
     }
 
     private EditText chatText;
-    private TextView chatView;
+    private ListView listView;
     private Button chatButton;
+    private List<ChatModel> list_chat = new ArrayList<>();
+    private ChatAdapter adapter;
 
     private AIService aiService;
     private AIDataService aiDataService;
@@ -60,10 +68,12 @@ public class ChatBotFragment extends Fragment implements AIListener{
         aiService = AIService.getService(getActivity(), config);
         aiService.setListener(this);
 
+        listView = getView().findViewById(R.id.list_message);
         chatButton = (Button) getView().findViewById(R.id.chatButton);
         chatText = (EditText) getView().findViewById(R.id.chatText);
-        chatView = (TextView) getView().findViewById(R.id.chatView);
-        chatView.setMovementMethod(new ScrollingMovementMethod());
+        adapter = new ChatAdapter(getActivity(),R.layout.list_item_message_robot, new ArrayList<ChatModel>());
+
+        listView.setAdapter(adapter);
 
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,9 +111,10 @@ public class ChatBotFragment extends Fragment implements AIListener{
         protected void onPostExecute(AIResponse aiResponse) {
             super.onPostExecute(aiResponse);
             Result result = aiResponse.getResult();
-            int message = result.getResolvedQuery().length() ;
-            chatView.append("Tu: " + result.getResolvedQuery() + "\r\n");
-            chatView.append("ChatBot: " + result.getFulfillment().getSpeech() + "\r\n" + "\r\n");
+
+            adapter.add(new ChatModel(result.getResolvedQuery(),true));
+            adapter.add(new ChatModel(result.getFulfillment().getSpeech(), false));
+            adapter.notifyDataSetChanged();
         }
     }
 
