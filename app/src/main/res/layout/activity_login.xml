@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/signInText"
-        android:layout_width="122dp"
+        android:layout_width="wrap_content"
         android:layout_height="53dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="188dp"

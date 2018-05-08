@@ -33,9 +33,11 @@ public class ProfileSingleton {
     public static ProfileSingleton getInstance() {
         createProfileInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(profileInstance.uuid);
+        if(!profileInstance.uuid.equals("0000000000")){
+            //DatabaseReference myRef = database.getReference(profileInstance.uuid);
+            //myRef.setValue(profileInstance);
+        }
 
-        myRef.setValue(profileInstance);
 
         return profileInstance;
     }
