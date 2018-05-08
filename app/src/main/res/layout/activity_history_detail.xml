@@ -68,12 +68,14 @@
 
     <Button
         android:id="@+id/historyDetailBttn"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_border"
+        android:background="@drawable/sign_in_botton"
         android:onClick="seeLocation"
         android:text="@string/open_map"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

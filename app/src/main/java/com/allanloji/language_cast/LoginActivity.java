@@ -121,7 +121,6 @@ public class LoginActivity extends Activity {
     private void updateUI(FirebaseUser user) {
 
         if (user != null) {
-
             ProfileSingleton.getInstance().setUuid(user.getUid());
             ProfileSingleton.getInstance().setAccessToken(token1);
             ProfileSingleton.getInstance().setName(user.getDisplayName().toString());
