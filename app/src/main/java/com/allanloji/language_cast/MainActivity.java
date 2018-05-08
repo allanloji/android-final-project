@@ -13,10 +13,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -96,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
     public void detailsNews(View view){
         Intent it = new Intent( MainActivity.this, EventDetailActivity.class);
        startActivity(it);
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
     }
 
 }

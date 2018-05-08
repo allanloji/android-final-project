@@ -6,13 +6,15 @@ import com.allanloji.language_cast.pojo.News;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.facebook.AccessToken;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileSingleton {
     private static ProfileSingleton profileInstance;
-    private String name, city, biography, photo, email;
+    private String name, city, biography, photo, email,uuid;
     private ArrayList<String> languages;
     private AccessToken accessToken;
     private ArrayList<News> historyList;
@@ -24,11 +26,16 @@ public class ProfileSingleton {
     public synchronized static void createProfileInstance(){
         if(profileInstance == null){
             profileInstance = new ProfileSingleton();
+            profileInstance.setUuid("0000000000");
         }
     }
 
     public static ProfileSingleton getInstance() {
-        createProfileInstance();;
+        createProfileInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(profileInstance.uuid);
+
+        myRef.setValue(profileInstance);
 
         return profileInstance;
     }
@@ -103,5 +110,13 @@ public class ProfileSingleton {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }
