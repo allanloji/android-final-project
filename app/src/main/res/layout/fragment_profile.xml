@@ -77,7 +77,7 @@
             android:layout_below="@+id/header"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
-            android:text="Detalles Personales"
+            android:text="@string/personal_details"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +92,7 @@
             android:layout_below="@+id/profilePersonalDetailsLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
-            android:text="Nombre"
+            android:text="@string/name"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +107,7 @@
             android:layout_below="@+id/profileNameLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
-            android:text="Ubicacion"
+            android:text="@string/location"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +122,7 @@
             android:layout_below="@+id/profileLocationLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +137,7 @@
             android:layout_below="@+id/profileBirthLbl"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
-            android:text="Lenguajes"
+            android:text="@string/languages"
             android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -227,21 +227,9 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:text="Logout"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profilePic" />
-
-        <com.google.android.youtube.player.YouTubePlayerView
-            android:id="@+id/videoView"
-            android:layout_width="400dp"
-            android:layout_height="200dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginStart="100dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toStartOf="parent" />
 
 
     </android.support.constraint.ConstraintLayout>

@@ -73,7 +73,7 @@
         android:layout_marginTop="160dp"
         android:background="@drawable/button_border"
         android:onClick="Assist"
-        android:text="Asistir"
+        android:text="@string/assist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"

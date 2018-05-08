@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Selecciona tus idiomas"
+        android:text="@string/select_languages"
         android:textColor="@color/middle_blue"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Espanol"
+                    android:text="@string/spanish"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Ingles"
+                    android:text="@string/english"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />
@@ -129,7 +129,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Italiano"
+                    android:text="@string/italian"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />
@@ -164,7 +164,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Frances"
+                    android:text="@string/french"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />
@@ -199,7 +199,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Japones"
+                    android:text="@string/japanese"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />
@@ -234,7 +234,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Chino"
+                    android:text="@string/chinese"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />
@@ -269,7 +269,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Coreano"
+                    android:text="@string/korean"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />
@@ -304,7 +304,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Aleman"
+                    android:text="@string/german"
                     android:textAlignment="center"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="18sp" />

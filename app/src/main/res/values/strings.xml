@@ -12,5 +12,31 @@
     <string name="post_subtitle">Últimos posts</string>
     <string name="profile_default_city">Ciudad de México</string>
     <string name="profile_default_email">No se pudo obtener email</string>
+    <string name="sign_up">Registro</string>
+    <string name="select_languages">Selecciona tus idiomas</string>
+    <string name="spanish">Español</string>
+    <string name="english">Inglés</string>
+    <string name="italian">Italiano</string>
+    <string name="french">Francés</string>
+    <string name="japanese">Japonés</string>
+    <string name="chinese">Chino</string>
+    <string name="korean">Coreano</string>
+    <string name="german">Alemán</string>
+    <string name="event">Evento</string>
+    <string name="write_message">Escribir mensaje</string>
+    <string name="send">Enviar</string>
+    <string name="personal_details">Detalles Personales</string>
+    <string name="name">Nombre</string>
+    <string name="location">Ubicación</string>
+    <string name="email">Email</string>
+    <string name="cant_retrieve_email">No se pudo obtener email</string>
+    <string name="languages">Lenguajes</string>
+    <string name="menu_events">Eventos</string>
+    <string name="menu_news">Noticias</string>
+    <string name="menu_history">Historial</string>
+    <string name="menu_profile">Perfil</string>
+    <string name="assist">Asistir</string>
+    <string name="open_map">Ver mapa</string>
+    <string name="language_accept">Aceptar</string>
 
 </resources>

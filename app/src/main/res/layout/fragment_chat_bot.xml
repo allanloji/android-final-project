@@ -45,7 +45,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginRight="25dp"
             android:layout_marginStart="18dp"
-            android:text="Enviar"
+            android:text="@string/send"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/chatText" />
@@ -58,7 +58,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginStart="25dp"
             android:ems="10"
-            android:hint="Escribe un mensaje"
+            android:hint="@string/write_message"
             android:inputType="textPersonName"
             android:textColor="@color/cardview_dark_background"
             app:layout_constraintBottom_toBottomOf="parent"
